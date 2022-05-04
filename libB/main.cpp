@@ -14,6 +14,8 @@
     #pragma warning Unknown dynamic link import/export semantics.
 #endif
 
+EXPORT void helloB ();
+
 EXPORT void helloB ()
 {
     std::cout << "Using libB" << std::endl;

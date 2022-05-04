@@ -1,0 +1,9 @@
+#!/bin/bash
+
+function main () {
+    name=$1
+    g++ -Wall $(pwd)/*.cpp -o main
+    ar crv ${name}.a $(pwd)/main  
+}
+
+main $1

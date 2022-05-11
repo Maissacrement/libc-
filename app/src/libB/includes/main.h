@@ -1,0 +1,2 @@
+void helloB ();
+int main ();

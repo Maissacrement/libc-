@@ -1,0 +1,3 @@
+/home/zero/Documents/programmation/C++/curl/client/build/CMakeFiles/rebuild_cache.dir
+/home/zero/Documents/programmation/C++/curl/client/build/CMakeFiles/edit_cache.dir
+/home/zero/Documents/programmation/C++/curl/client/build/CMakeFiles/main.dir

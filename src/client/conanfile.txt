@@ -1,0 +1,10 @@
+[requires]
+libcurl/7.80.0
+nlohmann_json/3.10.5
+
+[generators]
+cmake
+
+[imports]
+bin, *.dll -> ./bin # Copies all dll files from packages bin folder to my "bin" folder
+lib, *.dylib* -> ./lib # Copies all dylib files from packages lib folder to my "bin" folder

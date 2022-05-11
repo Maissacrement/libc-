@@ -1,2 +1,0 @@
-void helloC ();
-int main ();

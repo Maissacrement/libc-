@@ -7,7 +7,7 @@ COPY ./config config
 WORKDIR /config
 
 RUN apt update &&\
-    apt install python3 python3-pip cmake g++ -y
+    apt install python3 python3-pip cmake g++ cppcheck -y
 
 # CREATE USER
 ENV USER=conan \

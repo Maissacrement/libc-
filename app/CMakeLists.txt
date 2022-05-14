@@ -11,6 +11,7 @@ set(LIBC_INSTALL_CMAKEDIR "src/libC" CACHE STRING "Installation directory for cm
 include(${LIBA_INSTALL_CMAKEDIR}/CMakeLists.txt)
 include(${LIBB_INSTALL_CMAKEDIR}/CMakeLists.txt)
 include(${LIBC_INSTALL_CMAKEDIR}/CMakeLists.txt)
+set_target_properties(A A_static B B_static C C_static PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/../libs)
 
 add_executable(Helloworld src/main.cpp)
 target_link_libraries(Helloworld A)

@@ -33,3 +33,5 @@ USER ${USER}
 RUN pip3 install -r requirements.txt --upgrade
 
 WORKDIR ${DEV_HOME}/app
+
+ENTRYPOINT [ "tail", "-f", "/dev/null" ]

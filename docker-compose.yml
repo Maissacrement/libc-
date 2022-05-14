@@ -9,4 +9,3 @@ services:
     
   app:
     build: ./app
-    command: ["tail", "-f", "/dev/null"]

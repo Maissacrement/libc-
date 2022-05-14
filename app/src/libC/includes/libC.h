@@ -14,8 +14,8 @@
 #endif
 
 
-#ifndef LIBX_H
-#define LIBX_H
+#ifndef LIBC_H
+#define LIBC_H
 namespace EXPORT libC {
     void helloC ();
 }

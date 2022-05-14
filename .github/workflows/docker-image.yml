@@ -17,3 +17,5 @@ jobs:
     - name: Build the Docker image
       working-directory: ./app
       run: docker build -t conan:$(date +%s) .
+    - name: Generate package
+      run: docker run -i --rm conan /bin/bash -c "mkdir -p build;cmake ..;cmake --build .;./Helloworld"

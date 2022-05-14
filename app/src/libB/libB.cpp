@@ -20,9 +20,3 @@ EXPORT void helloB ()
 {
     std::cout << "Using libB" << std::endl;
 }
-
-int main () {
-    helloB();
-
-    return 0;
-}

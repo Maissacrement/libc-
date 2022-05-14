@@ -19,7 +19,8 @@ ENV DEV_HOME="/home/${USER}" \
 
 ENV PATH=${PATH}:${CONAN_BIN}:${CONAN_LIB}
 
-COPY ./src ${DEV_HOME}/app
+COPY ./CMakeLists.txt ${DEV_HOME}/app
+COPY ./src ${DEV_HOME}/app/src
 
 RUN mkdir -p ${DEV_HOME} ${DEV_HOME}/app ${CONAN_BIN} ${CONAN_LIB} && \
     echo "${USER}:x:${uid}:${gid}:${USER},,,:${DEV_HOME}:/bin/bash" >> /etc/passwd && \

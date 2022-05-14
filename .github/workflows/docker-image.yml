@@ -18,4 +18,4 @@ jobs:
       working-directory: ./app
       run: docker build -t conan_pkgr .
     - name: Generate package
-      run: docker run -i --rm conan_pkgr /bin/bash -c "cd app;mkdir -p build;cmake ..;cmake --build .;./Helloworld"
+      run: docker run -i --rm conan_pkgr /bin/bash -c "ls;mkdir -p build;cmake ..;cmake --build .;./Helloworld"

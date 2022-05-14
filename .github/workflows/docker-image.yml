@@ -17,7 +17,13 @@ jobs:
     - name: Build the Docker image
       working-directory: ./app
       run: docker build -t conan_pkgr .
+    - name: Run container
+      run: docker run -d --name conan_pkgr conan_pkgr
     - name: Generate package
-      run: docker run -i --rm conan_pkgr /bin/bash -c "mkdir -p build;cd build;time cmake ..;time cmake --build .;echo -e '\n';./Helloworld"
+      run: docker exec -i conan_pkgr /bin/bash -c "mkdir -p build;cd build;time cmake ..;time cmake --build .;echo -e '\n';./Helloworld"
     - name: Test
-      run: docker run -i --rm conan_pkgr /bin/bash -c "ls"
+      run: docker exec -i conan_pkgr conan_pkgr /bin/bash -c "ls"
+    - name: Clean
+      run: |
+        docker stop conan_pkgr
+        docker rm -f conan_pkgr

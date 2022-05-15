@@ -23,7 +23,7 @@ set(SOURCE_FILES ${src_base}/main.cpp)
 include_directories(${src_base}/includes)
 
 message(${CMAKE_BINARY_DIR})
-include(${src_base}/conanbuildinfo.cmake)
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
 

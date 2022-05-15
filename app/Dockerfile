@@ -7,7 +7,7 @@ COPY ./config config
 WORKDIR /config
 
 RUN apt update &&\
-    apt install python3 python3-pip cmake g++ cppcheck -y
+    apt install python3 python3-pip cmake g++ cppcheck vim -y
 
 # CREATE USER
 ENV USER=conan \
@@ -31,6 +31,7 @@ RUN mkdir -p ${DEV_HOME} ${DEV_HOME}/app ${CONAN_BIN} ${CONAN_LIB} && \
 USER ${USER}
 
 RUN pip3 install -r requirements.txt --upgrade
+COPY config/profile_conan ${DEV_HOME}/.conan/profiles/default
 
 WORKDIR ${DEV_HOME}/app
 

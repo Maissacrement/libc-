@@ -28,12 +28,14 @@ RUN mkdir -p ${DEV_HOME} ${DEV_HOME}/app ${CONAN_BIN} ${CONAN_LIB} ${DEV_HOME}/.
     echo "${USER}:x:${uid}:${gid}:${USER},,,:${DEV_HOME}:/bin/bash" >> /etc/passwd && \
     echo "${USER}:x:${uid}:" >> /etc/group
 
+RUN pip3 install -r requirements.txt --upgrade
+
 RUN cp /config/profile_conan ${DEV_HOME}/.conan/profiles/default
-RUN chown -R ${USER}:${USER} ${DEV_HOME} ${CONAN_BIN} ${CONAN_LIB}
+RUN chown -R ${USER}:${USER} ${DEV_HOME} ${CONAN_BIN}
 
 USER ${USER}
-
-RUN pip3 install -r requirements.txt --upgrade
+RUN conan config init
+RUN chown -R ${USER}:${USER} ${CONAN_LIB}
 
 WORKDIR ${DEV_HOME}/app
 

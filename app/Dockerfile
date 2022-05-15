@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:20.04
 
 ENV TZ=Europe/Paris
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
@@ -6,8 +6,9 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 COPY ./config config
 WORKDIR /config
 
-RUN apt update &&\
-    apt install python3 python3-pip cmake g++ cppcheck vim -y
+RUN apt update
+
+RUN apt install python3 python3-pip cmake g++-10 cppcheck vim -y
 
 # CREATE USER
 ENV USER=conan \

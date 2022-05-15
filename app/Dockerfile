@@ -24,11 +24,11 @@ RUN mkdir -p ${DEV_HOME}/app/src
 COPY ./CMakeLists.txt ${DEV_HOME}/app/
 COPY ./src ${DEV_HOME}/app/src
 
-RUN mkdir -p ${DEV_HOME} ${DEV_HOME}/app ${CONAN_BIN} ${CONAN_LIB} && \
+RUN mkdir -p ${DEV_HOME} ${DEV_HOME}/app ${CONAN_BIN} ${CONAN_LIB} ${DEV_HOME}/.conan/profiles/ && \
     echo "${USER}:x:${uid}:${gid}:${USER},,,:${DEV_HOME}:/bin/bash" >> /etc/passwd && \
     echo "${USER}:x:${uid}:" >> /etc/group
 
-RUN mv /config/profile_conan ${DEV_HOME}/.conan/profiles/default
+RUN cp /config/profile_conan ${DEV_HOME}/.conan/profiles/default
 RUN chown -R ${USER}:${USER} ${DEV_HOME} ${CONAN_BIN} ${CONAN_LIB}
 
 USER ${USER}

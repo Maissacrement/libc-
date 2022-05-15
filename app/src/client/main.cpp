@@ -1,31 +1,5 @@
-#include <curl/curl.h>
-#include <string>
 #include <iostream>
-#include <nlohmann/json.hpp>
-
-using json = nlohmann::json;
-using namespace std;
-
-string data;
-
-void fetch (char* URL)
-{
-    try
-    {
-        /* code */
-        CURL *curl = curl_easy_init();
-        if(curl) {
-            CURLcode res;
-            curl_easy_setopt(curl, CURLOPT_URL, URL);
-            res = curl_easy_perform(curl);
-            curl_easy_cleanup(curl);
-        }
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-} 
+#include "includes/curlpattern.h"
 
 // Driver Code
 int main()

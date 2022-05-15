@@ -20,6 +20,8 @@ jobs:
     - name: Run container
       run: docker run -d --name conan_pkgr conan_pkgr
     - name: Test
+      run: docker exec -i conan_pkgr /bin/bash -c "conan profile show default"
+    - name: Test
       run: docker exec -i conan_pkgr /bin/bash -c "cppcheck --enable=all --std=c++11 src --force"
     - name: Generate package
       run: docker exec -i conan_pkgr /bin/bash -c "mkdir -p build;cd build;time cmake ..;time cmake --build .;echo -e '\n';./Helloworld"

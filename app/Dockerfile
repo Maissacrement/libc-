@@ -28,7 +28,7 @@ RUN mkdir -p ${DEV_HOME} ${DEV_HOME}/app ${CONAN_BIN} ${CONAN_LIB} && \
     echo "${USER}:x:${uid}:${gid}:${USER},,,:${DEV_HOME}:/bin/bash" >> /etc/passwd && \
     echo "${USER}:x:${uid}:" >> /etc/group
 
-COPY config/profile_conan ${DEV_HOME}/.conan/profiles/default
+RUN mv /config/profile_conan ${DEV_HOME}/.conan/profiles/default
 RUN chown -R ${USER}:${USER} ${DEV_HOME} ${CONAN_BIN} ${CONAN_LIB}
 
 USER ${USER}

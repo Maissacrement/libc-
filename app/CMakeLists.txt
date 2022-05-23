@@ -21,6 +21,11 @@ target_link_libraries(Helloworld A)
 target_link_libraries(Helloworld B)
 target_link_libraries(Helloworld C)
 
+set_target_properties(Helloworld
+    PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/../bin"
+)
+
 add_custom_target(clean-all
     rm -rf ./*
 )

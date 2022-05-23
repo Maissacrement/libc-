@@ -1,0 +1,9 @@
+{
+ "remotes": [
+  {
+   "name": "art",
+   "url": "http://artifactory:8082",
+   "verify_ssl": true
+  }
+ ]
+}

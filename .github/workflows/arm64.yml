@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: deploy-armv8
-        uses: Maissacrement/PocArmv8byAndroid@v0.0.1
+        uses: Maissacrement/PocArmv8byAndroid@v0.0.2
